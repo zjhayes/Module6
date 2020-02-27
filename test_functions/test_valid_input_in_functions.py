@@ -18,6 +18,11 @@ class ValidateInputTest(unittest.TestCase):
         expected = "Below"
         self.assertTrue(results == expected)
 
+    def test_score_input_test_score_above_range(self):
+        results = validate_input_in_functions.score_input("Zachary", 101, "Above")
+        expected = "Above"
+        self.assertTrue(results == expected)
+
 
 if __name__ == '__main__':
     unittest.main()
