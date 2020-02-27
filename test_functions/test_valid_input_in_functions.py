@@ -23,6 +23,11 @@ class ValidateInputTest(unittest.TestCase):
         expected = "Above"
         self.assertTrue(results == expected)
 
+    def test_test_score_non_numeric(self):
+        results = validate_input_in_functions.score_input("Zachary", "asdf", "Non-numeric")
+        expected = "Non-numeric"
+        self.assertTrue(results == expected)
+
 
 if __name__ == '__main__':
     unittest.main()

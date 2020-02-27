@@ -6,7 +6,10 @@ def score_input(test_name, test_score=0, invalid_message='Invalid test score, tr
         :param invalid_message, message to warn of invalid input, default 'Invalid test score, try again!'.
         :returns the message multiplied as a string
         """
-    if 0 <= test_score <= 100:
-        return "%s: %d" % (test_name, test_score)
-    else:
+    try:
+        if 0 <= test_score <= 100:
+            return "%s: %d" % (test_name, test_score)
+        else:
+            raise TypeError()
+    except TypeError as err:
         return invalid_message
