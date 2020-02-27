@@ -24,8 +24,13 @@ class ValidateInputTest(unittest.TestCase):
         self.assertTrue(results == expected)
 
     def test_test_score_non_numeric(self):
-        results = validate_input_in_functions.score_input("Zachary", "asdf", "Non-numeric")
+        results = validate_input_in_functions.score_input("Zachary", "invalid input", "Non-numeric")
         expected = "Non-numeric"
+        self.assertTrue(results == expected)
+
+    def test_score_input_invalid_message(self):
+        results = validate_input_in_functions.score_input("Zachary", "invalid input", "Invalid message works")
+        expected = "Invalid message works"
         self.assertTrue(results == expected)
 
 
